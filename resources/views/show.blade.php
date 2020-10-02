@@ -18,7 +18,7 @@
             <tr>
                 <td>{{ $noticia->titulo }}</td>
                 <td>{{ $noticia->materia }}</td>
-                <td><a href="" class='btn btn-success'>Editar</a></td>
+                <td><a href="{{ route('noticias.edit',$noticia->id) }}" class='btn btn-danger'>Editar</a></td>
             </tr>
            
         </tbody>

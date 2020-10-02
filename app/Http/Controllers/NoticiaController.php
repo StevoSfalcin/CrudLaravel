@@ -73,7 +73,9 @@ class NoticiaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $noticia = $this->noticia->all()->where('id',$id)->first();
+        
+        return view('edit',['noticia'=>$noticia]);
     }
 
     /**
@@ -85,7 +87,11 @@ class NoticiaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$noticia = $this->noticia->find($id))
+        return redirect()->back();
+
+        $noticia->update($request->all());
+        return redirect()->route('noticias.index');
     }
 
     /**

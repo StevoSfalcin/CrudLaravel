@@ -19,7 +19,8 @@
             <tr>
                 <td>{{ $noticia->titulo }}</td>
                 <td>{{ $noticia->materia }}</td>
-                <td><a href="{{ route('noticias.show',$noticia->id) }}" class='btn btn-success'>Vizualizar</a><a href="" class='btn btn-danger'>Editar</a></td>
+                <td><a href="{{ route('noticias.show',$noticia->id) }}" class='btn btn-success'>Vizualizar</a>
+                    <a href="{{ route('noticias.edit',$noticia->id) }}" class='btn btn-danger'>Editar</a></td>
             </tr>
            
             @endforeach
