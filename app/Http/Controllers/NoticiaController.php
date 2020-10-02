@@ -11,14 +11,14 @@ class NoticiaController extends Controller
 
     protected $request;
     protected $noticia;
-    protected $idUser;
+    protected $usuario;
 
 
     public function __construct(Request $request, Noticia $noticia)
     {
         $this->request = $request;
         $this->noticia = $noticia;
-        $this->idUser = Auth::id();
+       
               
     }
     /**
@@ -28,7 +28,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = $this->noticia->all();
+        $noticias = $this->noticia->all()->where('idUser',Auth::id());
         
         return view('noticia',compact('noticias'));
     }
