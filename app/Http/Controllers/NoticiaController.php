@@ -29,7 +29,8 @@ class NoticiaController extends Controller
     public function index()
     {
         $noticias = $this->noticia->where('idUser',$this->idUser);
-        return view('noticias',compact('noticias'));
+        dd($noticias);
+        return view('noticia',compact('noticias'));
     }
 
     /**
