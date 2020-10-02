@@ -60,6 +60,10 @@ class AdminController extends Controller
      */
     public function show($id)
     {
+        $usuario = $this->usuario->all()->where('id',$id)->first();
+ 
+        
+        return view('admin.show',['usuario'=>$usuario]);
         
     }
 
@@ -71,7 +75,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = $this->usuario->all()->where('id',$id)->first();
+        
+        return view('user.edit',['usuario'=>$usuario]);
     }
 
     /**
@@ -95,5 +101,12 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request){
+        $usuarios = $this->usuario->search($request->filtro);
+
+
+        return view('user.usuario',['usuarios'=>$usuarios]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('template.app')
 
-@section('title','admin')
+@section('title','Usuarios')
 
 @section('content')
 

@@ -17,7 +17,11 @@ Route::redirect('/', '/noticias');
 
 Route::any('noticias/search','NoticiaController@search')->name('noticias.search');
 Route::resource('noticias','NoticiaController')->middleware(['auth']);
+
+Route::any('admin/search','AdminController@search')->name('admin.search');
 Route::resource('admin','AdminController')->middleware(['auth','check.is.admin']);
+
+
 Auth::routes();
 
 

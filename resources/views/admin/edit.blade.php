@@ -1,12 +1,12 @@
 @extends('template.app')
 
-@section('title','Noticias')
+@section('title','Editar Usuario')
 
 @section('content')
 
 <h1>Noticia<h1>
 
-    <form action="{{ route('noticias.update',$noticia->id) }}" method='post' class='form'>
+    <form action="{{ route('noticias.update',$usuario->id) }}" method='post' class='form'>
         @method('PUT')
         @csrf
         <input type="text" name="titulo" value="{{ $noticia->titulo }}"><br><br>
