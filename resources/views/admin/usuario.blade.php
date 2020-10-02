@@ -31,6 +31,6 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{ route('admin.create') }}" class='btn btn-success'>Criar Noticia</a>
+    <a href="{{ route('admin.create') }}" class='btn btn-success'>Criar Usuario</a>
 
 @endsection

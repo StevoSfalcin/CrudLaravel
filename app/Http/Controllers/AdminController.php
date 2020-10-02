@@ -38,7 +38,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -49,7 +49,11 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = $request->only('name','email','password');
+        
+
+        $this->usuario->create($usuario);
+        return redirect()->route('admin.index');
     }
 
     /**

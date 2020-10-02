@@ -1,15 +1,16 @@
 @extends('template.app')
 
-@section('title','Noticias')
+@section('title','Criar Usuario')
 
 @section('content')
 
-<h1>Noticia<h1>
+<h1>Novo Usuario</h1>
 
-    <form action="{{ route('noticias.store') }}" method='post' class='form'>
+    <form action="{{ route('admin.store') }}" method='post' class='form'>
         @csrf
-        <input type="text" name="titulo" placeholder="titulo da noticia"><br><br>
-        <input type="text" name="materia" placeholder="Materia da noticia..."><br>
+        <input type="text" name="name" placeholder="Nome"><br><br>
+        <input type="text" name="email" placeholder="Email"><br>
+        <input type="text" name="password" placeholder="Senha"><br>
         
         <button type="submit" class="btn btn-success">Criar Noticia</button>
     </form>
