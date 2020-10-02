@@ -17,7 +17,7 @@ Route::redirect('/', '/noticias');
 
 
 Route::resource('noticias','NoticiaController')->middleware(['auth']);
-Route::resource('admin','NoticiaController')->middleware(['auth']);
+Route::resource('admin','AdminController')->middleware(['auth']);
 Auth::routes();
 
 

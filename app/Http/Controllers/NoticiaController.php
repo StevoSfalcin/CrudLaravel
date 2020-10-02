@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
-class Noticia extends Controller
+
+class NoticiaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class Noticia extends Controller
      */
     public function index()
     {
-        //
+        return 'olaaaas';
     }
 
     /**
