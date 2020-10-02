@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Noticia;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class NoticiaController extends Controller
 {
+
+    protected $request;
+    protected $noticia;
+    protected $idUser;
+
+
+    public function __construct(Request $request, Noticia $noticia)
+    {
+        $this->request = $request;
+        $this->noticia = $noticia;
+        $this->idUser = Auth::id();
+              
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +28,8 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        return 'olaaaas';
+        $noticias = $this->noticia->where('idUser',$this->idUser);
+        return view('noticias',compact('noticias'));
     }
 
     /**
