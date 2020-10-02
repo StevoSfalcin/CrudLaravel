@@ -62,7 +62,6 @@ class NoticiaController extends Controller
     {
         $noticia = $this->noticia->all()->where('id',$id)->first();
         
-        
         return view('show',['noticia'=>$noticia]);
     }
 
@@ -102,7 +101,7 @@ class NoticiaController extends Controller
         redirect()->back();
 
         $noticia->delete();
-        return redirect()->route('/');
+        return redirect()->route('noticias.index');
 
     }
 }

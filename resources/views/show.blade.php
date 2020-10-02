@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Noticias<h1>
+<h1>Noticia<h1>
 
     <table class="table table-striped">
         <thead>
@@ -23,6 +23,10 @@
            
         </tbody>
     </table>
-    <a href="" class='btn btn-danger'>Deletar Produto</a>
+    <form action="{{ route('noticias.destroy',$noticia->id) }}" method="POST">
+        @method('DELETE')
+        @csrf
+    <button type="submit" class="btn btn-danger">Deletar Noticia</button>
+    </form>
 
 @endsection

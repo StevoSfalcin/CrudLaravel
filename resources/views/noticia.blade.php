@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Noticias<h1>
+<h1>Minhas Noticias<h1>
 
     <table class="table table-striped">
         <thead>
