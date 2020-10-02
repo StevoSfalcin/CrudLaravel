@@ -77,7 +77,7 @@ class AdminController extends Controller
     {
         $usuario = $this->usuario->all()->where('id',$id)->first();
         
-        return view('user.edit',['usuario'=>$usuario]);
+        return view('admin.edit',['usuario'=>$usuario]);
     }
 
     /**
@@ -89,7 +89,11 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$usuario = $this->usuario->find($id))
+        return redirect()->back();
+
+        $usuario->update($request->all());
+        return redirect()->route('admin.index');
     }
 
     /**

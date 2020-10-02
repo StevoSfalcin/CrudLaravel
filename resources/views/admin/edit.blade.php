@@ -4,20 +4,20 @@
 
 @section('content')
 
-<h1>Noticia<h1>
+<h1>usuario<h1>
 
-    <form action="{{ route('noticias.update',$usuario->id) }}" method='post' class='form'>
+    <form action="{{ route('admin.update',$usuario->id) }}" method='post' class='form'>
         @method('PUT')
         @csrf
-        <input type="text" name="titulo" value="{{ $noticia->titulo }}"><br><br>
-        <input type="text" name="materia" value="{{ $noticia->materia }}"><br>
+        <input type="text" name="name" value="{{ $usuario->name }}"><br><br>
+        <input type="text" name="email" value="{{ $usuario->email }}"><br>
         <button type="submit" class="btn btn-success">Editar</button>
     </form>
     
-    <form action="{{ route('noticias.destroy',$noticia->id) }}" method="POST">
+    <form action="{{ route('admin.destroy',$usuario->id) }}" method="POST">
         @method('DELETE')
         @csrf
-    <button type="submit" class="btn btn-danger">Deletar Noticia</button>
+    <button type="submit" class="btn btn-danger">Deletar usuario</button>
     </form>
 
 @endsection
