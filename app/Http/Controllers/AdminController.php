@@ -13,7 +13,7 @@ class Admin extends Controller
      */
     public function index()
     {
-        //
+        return 'foiiiiu';
     }
 
     /**
@@ -45,7 +45,7 @@ class Admin extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
