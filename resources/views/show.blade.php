@@ -11,20 +11,18 @@
             <tr>
                 <th>Titulo</th>
                 <th>Materia</th>
-                <th>Açoes</th>
+                <th>Açao</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($noticias as $noticia)
+        <tbody>       
             <tr>
                 <td>{{ $noticia->titulo }}</td>
                 <td>{{ $noticia->materia }}</td>
-                <td><a href="{{ route('noticias.show',$noticia->id) }}" class='btn btn-success'>Vizualizar</a><a href="" class='btn btn-danger'>Editar</a></td>
+                <td><a href="" class='btn btn-success'>Editar</a></td>
             </tr>
            
-            @endforeach
         </tbody>
     </table>
-    <a href="" class='btn btn-success'>Criar Noticia</a>
+    <a href="" class='btn btn-danger'>Deletar Produto</a>
 
 @endsection

@@ -11,15 +11,13 @@ class NoticiaController extends Controller
 
     protected $request;
     protected $noticia;
-    protected $usuario;
 
 
     public function __construct(Request $request, Noticia $noticia)
     {
         $this->request = $request;
         $this->noticia = $noticia;
-       
-              
+      
     }
     /**
      * Display a listing of the resource.
@@ -62,7 +60,10 @@ class NoticiaController extends Controller
      */
     public function show($id)
     {
-        //
+        $noticia = $this->noticia->all()->where('id',$id)->first();
+        
+        
+        return view('show',['noticia'=>$noticia]);
     }
 
     /**
@@ -96,6 +97,12 @@ class NoticiaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $noticia = $this->noticia->where('id',$id);
+        if(!$noticia)
+        redirect()->back();
+
+        $noticia->delete();
+        return redirect()->route('/');
+
     }
 }
