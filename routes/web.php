@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::redirect('/', '/noticias');
 
+
+Route::resource('noticias','NoticiaController')->middleware(['auth']);
+Route::resource('admin','NoticiaController')->middleware(['auth']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
