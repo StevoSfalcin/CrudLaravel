@@ -115,4 +115,10 @@ class NoticiaController extends Controller
         return redirect()->route('noticias.index');
 
     }
+
+    public function search(Request $request){
+        $noticias = $this->noticia->search($request->filtro);
+
+        return view('noticia',['noticias'=>$noticias]);
+    }
 }
