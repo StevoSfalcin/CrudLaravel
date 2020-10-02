@@ -119,6 +119,7 @@ class NoticiaController extends Controller
     public function search(Request $request){
         $noticias = $this->noticia->search($request->filtro);
 
+
         return view('noticia',['noticias'=>$noticias]);
     }
 }
