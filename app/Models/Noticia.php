@@ -10,6 +10,7 @@ class Noticia extends Model
     
     
     protected $fillable = ['titulo','materia','idUser'];
+    public $timestamps = false;
 
     public function search($filtro = null){
         $resultado = $this->where(function($query) use ($filtro){

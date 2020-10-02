@@ -2,10 +2,23 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class Admin extends Controller
+class AdminController extends Controller
 {
+
+    protected $request;
+    protected $usuario;
+
+
+    public function __construct(Request $request, User $usuario)
+    {
+        $this->request = $request;
+        $this->usuario = $usuario;
+      
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +26,9 @@ class Admin extends Controller
      */
     public function index()
     {
-        return 'foiiiiu';
+        $usuarios = $this->usuario->all();
+
+        return view('admin.usuario',compact('usuarios'));
     }
 
     /**
