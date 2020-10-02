@@ -26,6 +26,6 @@
             @endforeach
         </tbody>
     </table>
-    <a href="" class='btn btn-success'>Criar Noticia</a>
+    <a href="{{ route('noticias.create') }}" class='btn btn-success'>Criar Noticia</a>
 
 @endsection

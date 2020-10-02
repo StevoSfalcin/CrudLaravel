@@ -38,7 +38,8 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create',['idUser'=>Auth::id()]);
+
     }
 
     /**
@@ -49,7 +50,11 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $noticia = $request->only('titulo','materia');
+        $noticia['idUser'] = Auth::id();
+
+        $this->noticia->create($noticia);
+        return redirect()->route('noticias.index');
     }
 
     /**
