@@ -9,16 +9,17 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th></th>
-                <th></th>
+                <th>Titulo</th>
+                <th>Materia</th>
             </tr>
         </thead>
         <tbody>
             @foreach($noticias as $noticia)
             <tr>
                 <td>{{ $noticia->titulo }}</td>
-                <td>{{ $noticia->titulo }}</td>
+                <td>{{ $noticia->materia }}</td>
             </tr>
+           
             @endforeach
         </tbody>
     </table>

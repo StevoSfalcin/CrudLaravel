@@ -28,8 +28,8 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = $this->noticia->where('idUser',$this->idUser);
-        dd($noticias);
+        $noticias = $this->noticia->all();
+        
         return view('noticia',compact('noticias'));
     }
 
