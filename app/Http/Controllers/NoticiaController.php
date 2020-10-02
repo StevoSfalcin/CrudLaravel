@@ -28,7 +28,7 @@ class NoticiaController extends Controller
     {
         $noticias = $this->noticia->all()->where('idUser',Auth::id());
         
-        return view('noticia',compact('noticias'));
+        return view('user.noticia',compact('noticias'));
     }
 
     /**
@@ -38,7 +38,7 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        return view('create',['idUser'=>Auth::id()]);
+        return view('user.create',['idUser'=>Auth::id()]);
 
     }
 
@@ -67,7 +67,7 @@ class NoticiaController extends Controller
     {
         $noticia = $this->noticia->all()->where('id',$id)->first();
         
-        return view('show',['noticia'=>$noticia]);
+        return view('user.show',['noticia'=>$noticia]);
     }
 
     /**
@@ -80,7 +80,7 @@ class NoticiaController extends Controller
     {
         $noticia = $this->noticia->all()->where('id',$id)->first();
         
-        return view('edit',['noticia'=>$noticia]);
+        return view('user.edit',['noticia'=>$noticia]);
     }
 
     /**
@@ -120,6 +120,6 @@ class NoticiaController extends Controller
         $noticias = $this->noticia->search($request->filtro);
 
 
-        return view('noticia',['noticias'=>$noticias]);
+        return view('user.noticia',['noticias'=>$noticias]);
     }
 }
